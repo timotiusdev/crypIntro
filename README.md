@@ -7,8 +7,8 @@ IF a <= 1 THEN return a
   ELSE IF a is odd  then if a congruence n congruence 3 (mod 4)
     THEN return -Jacobi (n mod a, a)
     ELSE return Jacobi (n mod a, a)
-    
-  ELSE IF  n congruence +/- 1(mod 8)
+   
+  ELSE IF  n mod 8 = 3 OR n mod 8 = 5
     THEN return -Jacobi (a/2, n)
     ELSE return Jacobi (a/2, n)
     
