@@ -35,19 +35,18 @@ int main()
     cin >> a;
     cout << "Value of n = ";
     cin >> n;
+    result = jacobi(a,n);    
 
-    /* negative number handler */
-    if (a <= 0)
+    if (n <= 0)
+	cout << "\nn must be greater than 0" << endl;
+
+    /* negative a handler */
+    if (a <= 0 || n > 0){
 	a = a%n + n;
-    
-    result = jacobi(a,n);
-
-
-
 	cout << "\nThe Jacobian symbol of Jacobi("<< a <<", "<< n <<") is " << result << endl;
 
-    if (jacobi (a,n) == 1)
-	cout <<"Value of quadratic residue is " << findResidue(a, n) << endl;	
-
+    		if (jacobi (a,n) == 1){
+			cout <<"X which fulfilled X^2 congruent with "<< a <<" (mod " << n <<") is " << findResidue(a, n) << endl;}
+    }
     return 0;
 }
