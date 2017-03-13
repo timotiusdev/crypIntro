@@ -34,21 +34,23 @@ int main()
     cout << "Value of a = ";
     cin >> a;
     cout << "Value of n = ";
-    cin >> n;
-    result = jacobi(a,n);    
+    cin >> n;  
 
-    if (n <= 0)
-	cout << "\nn must be greater than 0" << endl;
+    if (n <= 0){
+	cout << "\nn must be greater than 0" << endl;}
 
     /* negative number handler */
-    if (n > 0){
-	if (a <= 0)
+    if (a <= 0 && n > 0){
 	a = a%n + n;
-	cout << "\nThe Jacobian symbol of Jacobi("<< a <<", "<< n <<") is " << result << endl;
-    	    if(result == 1){
+    cout << "\nThe Jacobian symbol of Jacobi("<< a <<", "<< n <<") is " << jacobi(a,n) << endl;
+            if(jacobi(a,n) == 1){
+        cout <<"X which fulfilled X^2 congruent with "<< a <<" (mod " << n <<") is " << findResidue(a, n) << endl;}
+        }
+
+	else if (a > 0 && n > 0){
+	cout << "\nThe Jacobian symbol of Jacobi("<< a <<", "<< n <<") is " << jacobi(a,n) << endl;
+    	    if(jacobi(a,n) == 1){
 		cout <<"X which fulfilled X^2 congruent with "<< a <<" (mod " << n <<") is " << findResidue(a, n) << endl;}
-}
+    }
  return 0;
 }
-
-
