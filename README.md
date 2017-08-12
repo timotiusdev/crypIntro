@@ -17,5 +17,3 @@ Jacobi values represent the membership of odd prime number, as define below
    -1 if a is member of p non-quadratic residue
     0 if a is dividable by the odd prime number
 ```   
-
-dev
